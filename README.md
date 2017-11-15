@@ -6,6 +6,10 @@ This fork is somewhat more dangerous than InAnimaTe/docker-vsftpd-anon because *
 
 Thus, you will need to be extra vigilant to ensure any volumes you don't want to allow uploads to have *:ro* at the end of their bind mount declaration!
 
+
+----
+
+
 ### vsftpd-anon: An quick, anonymous ftp server docker image
 
 This image is meant for running something like a public read-only share. User accounts are *not* supported and all data access is meant to be read only via ftp anonymous login.
