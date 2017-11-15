@@ -16,10 +16,10 @@ This image is meant for running something like a public read-only share. User ac
 
 #### Up-and-Running
 
-View my included `docker-compose.yml` for a runtime configuration example or check the below one-liner for a quick launch!
+View the included `docker-compose.yml` for a runtime configuration example or check the below one-liner for a quick launch!
 
 ```
-docker run -d -p 20-21:20-21 -p 65500-65515:65500-65515 -v /tmp:/var/ftp:ro inanimate/vsftpd-anon
+docker run -d -p 20-21:20-21 -p 65500-65515:65500-65515 -v /tmp:/var/ftp:ro mikenye/vsftpd-anon-uploads
 ```
 
 #### Runtime Configuration Options
@@ -38,6 +38,7 @@ There are a series of available variables you can tune at your own discretion. T
 
 #### Notes
 
-* Ensure you use *:ro* at the end of your bind mount declaration!
+* Ensure you use *:ro* at the end of your bind mount declaration for non incoming directorites!
+* Ensure you don't use *:ro* at the end of your incoming dir mount declaration!
 * We utilize ftp passive mode so we can define the ports we need and not have to use `--net=host`. This is the preferred way to use ftp!
 * You can find some great documentation on configuration options and other vsftpd information on the [Archwiki](https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon) and in the [man page](https://security.appspot.com/vsftpd/vsftpd_conf.html)
